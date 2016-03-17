@@ -4,22 +4,22 @@ Channel::ptr ChannelPool::GetCapableChannel()
 {
 	Channel::ptr channel = NULL;
 
-	for (channel_array::const_iterator
-		b = channel_list_.begin(),
-		e = channel_list_.end(); b != e; b++)
+	for (ChannelMap::const_iterator
+		b = channel_map_.begin(),
+		e = channel_map_.end(); b != e; b++)
 	{
-		if ((*b)->HasRoom())
+		if ((b->second)->HasRoom())
 		{
-			channel = *b;
+			channel = b->second;
 			break;
 		}
 	}
 
 	if (NULL == channel)
 	{
-		size_t id = channel_list_.size();
+		size_t id = id_flag_++;
 		channel = Channel::NewPtr(id);
-		channel_list_.push_back(channel);
+		channel_map_._Insert_or_assign(id, channel);
 	}
 
 	return channel;

@@ -4,14 +4,15 @@
 
 class ChannelPool
 {
-	typedef std::vector<Channel::ptr> channel_array;
+	typedef std::map<size_t, Channel::ptr> ChannelMap;
 public:
-	ChannelPool() {}
+	ChannelPool() : id_flag_(0) {}
 	~ChannelPool() {}
 
 	Channel::ptr ChannelPool::GetCapableChannel();
 private:
-	channel_array channel_list_;
+	size_t id_flag_;
+	ChannelMap channel_map_;
 	boost::mutex cs_;
 };
 
