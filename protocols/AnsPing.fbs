@@ -1,0 +1,10 @@
+include "InfoChannel.fbs";
+
+namespace Protocols;
+
+table AnsPing {
+	id:ulong;
+	channel:InfoChannel;
+}
+
+root_type AnsPing;

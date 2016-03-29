@@ -4,8 +4,7 @@
 #include <boost/enable_shared_from_this.hpp>
 #include <boost/bind.hpp>
 #include <boost/thread.hpp>
-
-#define EXPIRED_MICROSEC 5000
+#include "flatbuffers/flatbuffers.h"
 
 using namespace boost::asio;
 
@@ -15,12 +14,18 @@ class TalkToClient :
 {
 	typedef TalkToClient self_type;
 
+#define PACKET_END "*_bae_\n"
+#define EXPIRED_MILLISEC 10000
+
 #define MEM_FN1(x)		boost::bind(&self_type::x, shared_from_this())
 #define MEM_FN2(x,y)	boost::bind(&self_type::x, shared_from_this(), y)
 #define MEM_FN3(x,y,z)	boost::bind(&self_type::x, shared_from_this(), y, z)
 
-	TalkToClient(io_service &service) : sock_(service), timer_(service), started_(false) {}
+	TalkToClient(io_service &service) : 
+		sock_(service), timer_(service), started_(false),
+		id_(0), channel_id_(0) {}
 public:
+	typedef unsigned long long id_type;
 	typedef boost::shared_ptr<self_type> ptr;
 
 	static ptr New(io_service &service) { return ptr(new self_type(service)); }
@@ -28,6 +33,8 @@ public:
 
 	void Start()
 	{
+		std::cout << "[TalkToClient:" << id_ << "] Start thread:" << boost::this_thread::get_id() << std::endl;
+
 		started_ = true;
 		//wait login
 		DoRead();
@@ -35,6 +42,8 @@ public:
 
 	void Stop()
 	{
+		std::cout << "[TalkToClient:" << id_ << "] Stop thread:" << boost::this_thread::get_id() << std::endl;
+
 		if (false == started_)
 		{
 			return;
@@ -43,10 +52,13 @@ public:
 		started_ = false;
 		sock_.close();
 	}
+
+	id_type id() { return id_; }
+	void set_channel_id(id_type channel_id) { channel_id_ = channel_id; }
 private:
 	void DoRead();
 	void OnRead(const boost::system::error_code &ec, size_t bytes);
-	void HandleRequest(std::string request);
+	void HandleRequest(flatbuffers::Verifier &, std::string, std::string);
 	
 	void DoWrite(std::string response);
 	void OnWrite(const boost::system::error_code &ec, size_t bytes);
@@ -54,11 +66,14 @@ private:
 	void CheckTimeOut();
 	void OnCheckTimeOut();
 
-	void UpdateClientChaged();
+	void OnLogin(std::string);
+	void OnPing(std::string);
 private:
 	ip::tcp::socket sock_;
 	deadline_timer timer_;
 	bool started_;
+	id_type id_;
+	id_type channel_id_;
 	streambuf read_buff_;
 	streambuf write_buff_;
 	boost::mutex cs_;

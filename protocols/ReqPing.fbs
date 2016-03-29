@@ -1,0 +1,7 @@
+namespace Protocols;
+
+table ReqPing {
+	id:ulong;
+}
+
+root_type ReqPing;

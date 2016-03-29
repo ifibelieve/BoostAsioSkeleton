@@ -1,0 +1,7 @@
+namespace Protocols;
+
+table InfoChannel{
+	id:ulong;
+}
+
+root_type InfoChannel;

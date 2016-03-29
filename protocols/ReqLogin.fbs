@@ -1,0 +1,8 @@
+namespace Protocols;
+
+table ReqLogin {
+	id:ulong;
+	channel_id:ulong;
+}
+
+root_type ReqLogin;
