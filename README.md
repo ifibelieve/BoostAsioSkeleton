@@ -1,6 +1,15 @@
 # BoostAsioSkeleton
 Boost Asio Skeleton
 
+ToDo
+
+* add rabbitMQ client
+* boost streambuf must be handled delicately
+
+Bug
+
+* has problems in run on visual studio debuger
+
 Feature
 
 * Boost Asio
