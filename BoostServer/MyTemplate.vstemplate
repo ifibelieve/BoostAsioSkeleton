@@ -1,0 +1,39 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>BoostServer</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>BoostServer</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="BoostServer.vcxproj" File="BoostServer.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">BoostServer.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="BoostServer.cpp">BoostServer.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="stdafx.cpp">stdafx.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Channel.cpp">BAESERVER\Channel.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ChannelDispatcher.cpp">BAESERVER\ChannelDispatcher.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ChannelPool.cpp">BAESERVER\ChannelPool.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="TalkToClient.cpp">BAESERVER\TalkToClient.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="stdafx.h">stdafx.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="targetver.h">targetver.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Channel.h">BAESERVER\Channel.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ChannelDispatcher.h">BAESERVER\ChannelDispatcher.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ChannelPool.h">BAESERVER\ChannelPool.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="TalkToClient.h">BAESERVER\TalkToClient.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="AnsLogin_generated.h">PROTOCOLS\AnsLogin_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="AnsPing_generated.h">PROTOCOLS\AnsPing_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="InfoChannel_generated.h">PROTOCOLS\InfoChannel_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ReqLogin_generated.h">PROTOCOLS\ReqLogin_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ReqPing_generated.h">PROTOCOLS\ReqPing_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ReadMe.txt">ReadMe.txt</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

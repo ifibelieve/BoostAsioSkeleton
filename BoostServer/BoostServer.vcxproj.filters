@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\BaeServer">
+      <UniqueIdentifier>{3e597196-1141-4a78-99ab-b49830cd60f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BaeServer">
+      <UniqueIdentifier>{1a45d279-a65a-4ee2-a375-5d632780f151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Protocols">
+      <UniqueIdentifier>{d144f383-1c8a-4528-8919-db8baf5e7714}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaeServer\Channel.h">
+      <Filter>Header Files\BaeServer</Filter>
+    </ClInclude>
+    <ClInclude Include="BaeServer\ChannelDispatcher.h">
+      <Filter>Header Files\BaeServer</Filter>
+    </ClInclude>
+    <ClInclude Include="BaeServer\ChannelPool.h">
+      <Filter>Header Files\BaeServer</Filter>
+    </ClInclude>
+    <ClInclude Include="BaeServer\TalkToClient.h">
+      <Filter>Header Files\BaeServer</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocols\AnsLogin_generated.h">
+      <Filter>Header Files\Protocols</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocols\AnsPing_generated.h">
+      <Filter>Header Files\Protocols</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocols\InfoChannel_generated.h">
+      <Filter>Header Files\Protocols</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocols\ReqLogin_generated.h">
+      <Filter>Header Files\Protocols</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocols\ReqPing_generated.h">
+      <Filter>Header Files\Protocols</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BoostServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaeServer\ChannelPool.cpp">
+      <Filter>Source Files\BaeServer</Filter>
+    </ClCompile>
+    <ClCompile Include="BaeServer\TalkToClient.cpp">
+      <Filter>Source Files\BaeServer</Filter>
+    </ClCompile>
+    <ClCompile Include="BaeServer\Channel.cpp">
+      <Filter>Source Files\BaeServer</Filter>
+    </ClCompile>
+    <ClCompile Include="BaeServer\ChannelDispatcher.cpp">
+      <Filter>Source Files\BaeServer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

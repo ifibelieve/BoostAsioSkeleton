@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>BoostClient</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>BoostClient</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="BoostClient.vcxproj" File="BoostClient.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">BoostClient.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="BoostClient.cpp">BoostClient.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="stdafx.cpp">stdafx.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="TalkToServer.cpp">TalkToServer.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="stdafx.h">stdafx.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="targetver.h">targetver.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="AnsLogin_generated.h">PROTOCOLS\AnsLogin_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="AnsPing_generated.h">PROTOCOLS\AnsPing_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="InfoChannel_generated.h">PROTOCOLS\InfoChannel_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ReqLogin_generated.h">PROTOCOLS\ReqLogin_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ReqPing_generated.h">PROTOCOLS\ReqPing_generated.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="TalkToServer.h">TalkToServer.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="ReadMe.txt">ReadMe.txt</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
